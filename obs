@@ -1,0 +1,32 @@
+Tipos de testes de integração:
+
+-> Integração com o banco de dados: qdo temos classes repository e classes DAO que fazem acesso ao
+banco de dados em si e queremos testar estas classes. Que é o foco desde projeto. Pois a grande maioria
+das aplicações utiliza banco de dados. 
+
+-> Integração com API externa: sao utilizamos quando queremos chamar, consultar ou consumir uma API
+externa utilizando o REST. 
+
+-> Integração com outros módulos: testa a integração de um módulo com o outro (como no caso de aplicações 
+muito complexas).
+
+-> Integração com serviços de mensageria: sao utilizados caso a aplicação utilize JMS ou outras tecnologias 
+de mensageria. 
+
+
+
+https://martinfowler.com/articles/practical-test-pyramid.html
+
+Pirâmide de testes:
+
+Topo: UI -> São os testes de interface com o usuário. Testes de aceitação. End to end. Depende do 
+sistema estar rodando. Tem a manutenção mais cara e demora mais para executar, pois ele vai de ponta
+a ponta na aplicacao. Para os testes de UI utilizamos o Selenuim, Appium por exemplo. 
+
+Meio: Service -> são os testes de integração. Os testes que serão aplicados neste projeto. São um 
+mais trabalhosos de escrever e demoram um pouco mais que os testes de unidade para executar. 
+Nestes testes temos os tipos de testes de integração que são descritos logo acima.
+
+Base: Unit -> são os testes de unidade. São mais baratos, mais rápidos. Como são testes mais simples, 
+tesde de uma classe ou um método, são mais fáceis de dar manutenção. E é um teste que é executado de 
+maneira mais rápida. Utilizamos normalmente o jUnit para rodar estes testes. 

@@ -22,14 +22,14 @@ public class LeilaoDao {
 		this.em = em;
 	}
 
-	public void salvar(Leilao leilao) {
-		em.merge(leilao);
+	public Leilao salvar(Leilao leilao) {
+		return em.merge(leilao);
 	}
 
 	public Leilao buscarPorId(Long id) {
 		return em.find(Leilao.class, id);
 	}
-
+	// em uma classe DAO eh mais interessante testar os metodos de consulta
 	public List<Leilao> buscarTodos() {
 		return em.createQuery("SELECT l FROM Leilao l", Leilao.class)
 				.getResultList();
